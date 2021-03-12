@@ -21,6 +21,14 @@ camera.position.set( 0, 10, 15);
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 
+//Setting renderer for better results
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1;
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
 //Adding rendered element to body of HTML
 document.body.appendChild( renderer.domElement );
 
@@ -31,6 +39,15 @@ controls.update();
 //Created two lights
 var light = new THREE.DirectionalLight(0xdfebff, 1);
 var anotherLight = new THREE.DirectionalLight( 0xffffff );
+
+//Setting Lights for better result
+light.position.set(50,200,10);
+light.position.multiplyScalar( 1.3 );
+light.shadow.mapSize.width = 1024;
+light.shadow.mapSize.height = 1024;
+light.castShadow = true;
+anotherLight.position.set(1,1,1);
+anotherLight.castShadow = false;
 
 //Lights added to the scene
 scene.add( light );
