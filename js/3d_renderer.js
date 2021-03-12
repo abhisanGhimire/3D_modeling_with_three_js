@@ -2,9 +2,9 @@
 //@invictus
 
 //Imported THREE.js build module,OrbitControls for 
-import * as THREE from './build/three.module.js';
-import { OrbitControls } from './jsm/controls/OrbitControls.js';
-import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
+import * as THREE from '../build/three.module.js';
+import { OrbitControls } from '../jsm/controls/OrbitControls.js';
+import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
 
 //Camera for vision, scene for platform, renderer for visualization(display);
 var camera, scene, renderer;
@@ -34,9 +34,9 @@ document.body.appendChild( renderer.domElement );
 
 //Created a OrbitControl and updated
 var controls=new OrbitControls(camera,renderer.domElement);
-controls.update();
 
-//Created two lights
+//Created three lights
+const ambientLight = new THREE.AmbientLight( 0x222222 );
 var light = new THREE.DirectionalLight(0xdfebff, 1);
 var anotherLight = new THREE.DirectionalLight( 0xffffff );
 
@@ -52,6 +52,8 @@ anotherLight.castShadow = false;
 //Lights added to the scene
 scene.add( light );
 scene.add( anotherLight );
+scene.add( ambientLight );
+
 
 //Created a GLTFLoader
 var loader = new GLTFLoader().setPath( './' );
@@ -60,7 +62,7 @@ var loader = new GLTFLoader().setPath( './' );
 loader.load( 'mountain.gltf', function ( gltf ) {
             gltf.scene.scale.set(1.5,1.5,1.5);
             scene.add(gltf.scene);
-} ); 
+        }); 
 
 //EventListener to window resize
 window.addEventListener('resize',function(){
@@ -72,6 +74,7 @@ window.addEventListener('resize',function(){
 function animate() {
     requestAnimationFrame( animate );
     renderer.render( scene, camera );
+    controls.update();
 }
 
 //Call function to render model
