@@ -17,4 +17,4 @@ Or you can change the file path for import accordingly
 
 You can simply download and run with the live server using VS CODE Extensions 
 
-##Contact Abhisan for Further Queries
+##Feel free to contact Abhisan for further queries
