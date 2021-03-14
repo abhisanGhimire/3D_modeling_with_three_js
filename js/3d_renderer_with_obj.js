@@ -2,9 +2,9 @@
 //@invictus
 
 //Imported THREE.js build module,OrbitControls and OBJLoader 
-import * as THREE from './build/three.module.js';
-import { OrbitControls } from './jsm/controls/OrbitControls.js';
-import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+import * as THREE from '../build/three.module.js';
+import { OrbitControls } from '../jsm/controls/OrbitControls.js';
+import { OBJLoader } from '../jsm/loaders/OBJLoader.js';
 
 
 //Camera for vision, scene for platform, renderer for visualization(display);
