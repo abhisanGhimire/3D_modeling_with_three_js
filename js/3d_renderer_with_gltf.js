@@ -2,9 +2,9 @@
 //@invictus
 
 //Imported THREE.js build module,OrbitControls and GLTFLoader 
-import * as THREE from '../build/three.module.js';
-import { OrbitControls } from '../jsm/controls/OrbitControls.js';
-import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
+import * as THREE from './build/three.module.js';
+import { OrbitControls } from './jsm/controls/OrbitControls.js';
+import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
 
 
 //Camera for vision, scene for platform, renderer for visualization(display);
