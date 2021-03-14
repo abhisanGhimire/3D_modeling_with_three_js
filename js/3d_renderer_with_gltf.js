@@ -1,10 +1,11 @@
 //2020-March-12
 //@invictus
 
-//Imported THREE.js build module,OrbitControls for 
+//Imported THREE.js build module,OrbitControls and GLTFLoader 
 import * as THREE from '../build/three.module.js';
 import { OrbitControls } from '../jsm/controls/OrbitControls.js';
 import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
+
 
 //Camera for vision, scene for platform, renderer for visualization(display);
 var camera, scene, renderer;
@@ -59,10 +60,11 @@ scene.add( ambientLight );
 var loader = new GLTFLoader().setPath( './' );
 
 //GLTF loaded and added to scene
-loader.load( 'mountain.gltf', function ( gltf ) {
+loader.load( 'models/mountain.gltf', function ( gltf ) {
             gltf.scene.scale.set(1.5,1.5,1.5);
             scene.add(gltf.scene);
         }); 
+
 
 //EventListener to window resize
 window.addEventListener('resize',function(){
