@@ -16,7 +16,7 @@ scene.background = new THREE.Color( "#f6e8c3" );
 
 //Created a PrespectiveCamera with set position
 camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.25, 3000 );
-camera.position.set( 0, 10, 15);
+camera.position.set( 0, 15, 30);
 
 //Created a WebGLRenderer & size set as window
 renderer = new THREE.WebGLRenderer();
@@ -35,7 +35,7 @@ document.body.appendChild( renderer.domElement );
 
 //Created a OrbitControl
 var controls=new OrbitControls(camera,renderer.domElement);
-
+controls.autoRotate=true;
 //Created three lights
 const ambientLight = new THREE.AmbientLight( 0x222222 );
 var light = new THREE.DirectionalLight(0xdfebff, 1);
